@@ -1,10 +1,13 @@
 fun main() {
+    
+    private val calories = input.split("\n\n").map { group -> Elf(group.split("\n").map { it.toInt() }) }
+    
     fun part1(input: List<String>): Int {
-        return input.size
+        return calories.maxOf { it.calories.sum() }
     }
 
     fun part2(input: List<String>): Int {
-        return input.size
+        return calories.map { it.calories.sum() }.sortedDescending().take(3).sum()
     }
 
     // test if implementation meets criteria from the description, like:
