@@ -1,15 +1,15 @@
 fun main() {
     
-    fun calories(input: List<String>) {
-        return input.split("\n\n").map { group -> Elf(group.split("\n").map { it.toInt() }) }
+    fun calories(input: String): List<String> {
+        return input.split("\n\n")
     }
     
-    fun part1(input: List<String>): Int {
-        return calories(input).maxOf { it.calories.sum() }
+    fun part1(input: String): Int {
+        return calories(input).maxOf { it.split("\n").sumOf(String::toInt) }
     }
 
-    fun part2(input: List<String>): Int {
-        return calories(input).map { it.calories.sum() }.sortedDescending().take(3).sum()
+    fun part2(input: String): Int {
+        return calories(input).map { it.split("\n").sumOf(String::toInt) }.sortedDescending().take(3).sum()
     }
 
     // test if implementation meets criteria from the description, like:
