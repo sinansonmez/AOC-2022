@@ -2,7 +2,6 @@ package Day06
 
 import readInput
 
-// had a lot of challenge to solve day05. Thanks to https://github.com/James-Ansley/adventofcode/blob/main/kotlin/src/main/kotlin/y2022/day05.kt I figured out how to solve it
 fun main() {
 
     fun items(input: String): List<String> {
