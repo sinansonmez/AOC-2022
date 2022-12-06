@@ -10,12 +10,9 @@ fun main() {
     }
 
     fun solve(input: String, limit: Int): Int {
-        (0..input.length - limit).forEach { num ->
-            if (input.subSequence(num, num + limit).toSet().size == limit) {
-                return num + limit
-            }
-        }
-        return 0
+        return input.indices.find {
+            input.drop(it).take(limit).toSet().size == limit
+        }!! + limit
     }
 
     fun part1(input: String): Int {
